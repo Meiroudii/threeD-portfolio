@@ -1,4 +1,8 @@
 import './style.css'
+import moonImage from "./assets/moon.jpg";
+import spaceImage from "./assets/space.jpg";
+import avatarImage from "./assets/avatar.png";
+import normalMapImage from "./assets/normal.jpg";
 
 import * as THREE from 'three';
 
@@ -86,11 +90,11 @@ function addStar() {
 Array(200).fill().forEach(addStar);
 
 // Load jpg image for teture
-const spaceTexture = new THREE.TextureLoader().load('./space.jpg');
+const spaceTexture = new THREE.TextureLoader().load(spaceImage);
 scene.background = spaceTexture;
 
 // Avatar
-const meiroudiiTexture = new THREE.TextureLoader().load('./avatar.png');
+const meiroudiiTexture = new THREE.TextureLoader().load(avatarImage);
 const meiroudii = new THREE.Mesh(
     new THREE.BoxGeometry(3, 3, 3),
     new THREE.MeshBasicMaterial( { map: meiroudiiTexture} )
@@ -98,8 +102,8 @@ const meiroudii = new THREE.Mesh(
 scene.add(meiroudii);
 
 // Moon Object
-const moonTexture = new THREE.TextureLoader().load('./moon.jpg');
-const normalTexture = new THREE.TextureLoader().load('./normal.jpg');
+const moonTexture = new THREE.TextureLoader().load(moonImage);
+const normalTexture = new THREE.TextureLoader().load(normalMapImage);
 const moon = new THREE.Mesh(
     new THREE.SphereGeometry(3, 32, 32),
     new THREE.MeshStandardMaterial( {
